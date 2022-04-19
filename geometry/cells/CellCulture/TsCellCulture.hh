@@ -14,26 +14,27 @@
 
 #include "TsVGeometryComponent.hh"
 
+class G4VSolid;
 
 class TsCellCulture : public TsVGeometryComponent
-{    
+{
 public:
-	TsCellCulture(TsParameterManager* pM, TsExtensionManager* eM, TsMaterialManager* mM, TsGeometryManager* gM,
-				  TsVGeometryComponent* parentComponent, G4VPhysicalVolume* parentVolume, G4String& name);
-	~TsCellCulture();
-	
-	G4VPhysicalVolume* Construct();
-    
+    TsCellCulture(TsParameterManager *pM, TsExtensionManager *eM, TsMaterialManager *mM, TsGeometryManager *gM,
+                  TsVGeometryComponent *parentComponent, G4VPhysicalVolume *parentVolume, G4String &name);
+    ~TsCellCulture();
+
+    G4VPhysicalVolume *Construct();
+
     void ResolveParameters();
-    
+
 private:
     G4double HLX;
     G4double HLY;
     G4double HLZ;
-    
+
     G4double CellRadius;
     G4double NuclRadius;
-    
+
     G4int NbOfCells;
 };
 
