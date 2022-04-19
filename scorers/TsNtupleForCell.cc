@@ -30,6 +30,7 @@ TsNtupleForCell::TsNtupleForCell(TsParameterManager* pM, TsMaterialManager* mM, 
     fNtuple->RegisterColumnI(&fRunID, "Run ID");
     fNtuple->RegisterColumnI(&fEventID, "Event ID");
     fNtuple->RegisterColumnS(&fVolName, "Volume Name");
+    fNtuple->RegisterColumnF(&fTime, "Time", "ps");
 
 }
 
@@ -53,7 +54,8 @@ G4bool TsNtupleForCell::ProcessHits(G4Step* aStep, G4TouchableHistory*)
     G4ThreeVector pos = theStepPoint->GetPosition();
     
     //Score events that deposit energy in the cell and it's organelles:
-    if ((flagEnergyDep > 0)){
+    G4String mito = "Mitochondria";
+    if ((flagEnergyDep > 0 && volumeName.contains(mito))){
         
         //Get position
         fPosX = pos.x();
@@ -76,6 +78,9 @@ G4bool TsNtupleForCell::ProcessHits(G4Step* aStep, G4TouchableHistory*)
         
         //Get volume Name
         fVolName = volumeName;
+
+        //Time
+        fTime = aStep->GetPreStepPoint()->GetGlobalTime();
 
         fNtuple->Fill();
 

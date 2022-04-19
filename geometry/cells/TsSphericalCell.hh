@@ -28,7 +28,7 @@ public:
     
 private:
     G4double CellRadius;
-    
+
 };
 
 #endif

@@ -53,7 +53,7 @@ d:So/Example/BeamPositionCutoffX      = 20 um
 d:So/Example/BeamPositionCutoffY      = 20 um
 d:So/Example/BeamAngularSpreadX       = 0.0032 rad
 d:So/Example/BeamAngularSpreadY       = 0.0032 rad
-i:So/Example/NumberOfHistoriesInRun   = 200
+i:So/Example/NumberOfHistoriesInRun   = 1000
 
 
 #Score dose to the cell

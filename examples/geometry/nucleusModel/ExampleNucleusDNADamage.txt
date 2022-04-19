@@ -58,7 +58,7 @@ d:Ge/BeamPosition/TransZ                            = 5. um
 s:So/ParticleGun/BeamParticle                       = "proton"
 s:So/ParticleGun/BeamPositionDistribution           = "none"
 s:So/ParticleGun/BeamAngularDistribution            = "none"
-d:So/ParticleGun/BeamEnergy                         = 6.0 MeV
+d:So/ParticleGun/BeamEnergy                         = 2.0 MeV
 i:So/ParticleGun/NumberOfHistoriesInRun             = 1
 
 # -- Scorer --
@@ -112,7 +112,7 @@ s:Sc/DNAScorer/DNAStructure					           = "0, 1"
 i:Sc/DNAScorer/InVitroOrInVivo						   = 0
 s:Sc/DNAScorer/ProliferationStatus					   = "1"
 s:Sc/DNAScorer/Microenvironment					       = "20, 0.01"
-d:Sc/DNAScorer/Time					  				   = 0 s
+d:Sc/DNAScorer/Time					  	       = 0.01 s
 s:Sc/DNAScorer/AdditionalInfo					       = ""
 
 Ts/ShowHistoryCountAtInterval                       = 1
@@ -129,3 +129,5 @@ Ts/ShowHistoryCountAtInterval                       = 1
 #s:Gr/view/BackgroundColor               = "White"
 
 i:Ts/Seed = 2580
+i:Ts/NumberofThreads = 12
+b:Ts/ShowCPUTime = "True"

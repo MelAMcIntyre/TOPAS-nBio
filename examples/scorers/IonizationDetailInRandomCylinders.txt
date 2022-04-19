@@ -35,7 +35,7 @@ s:So/Demo/BeamAngularDistribution  = "None"
 s:So/Demo/BeamParticle = "proton"
 d:So/Demo/BeamEnergy   = 5 MeV 
 u:So/Demo/BeamEnergySpread = 0 
-i:So/Demo/NumberOfHistoriesInRun = 10
+i:So/Demo/NumberOfHistoriesInRun = 100
 
 # Tuple scorer. By default includes physical and chemical track.
 
@@ -51,13 +51,14 @@ b:Sc/pTuple/PropagateToChildren = "true"
 b:Sc/pTuple/IncludeChemicalTrack = "False"
 b:Sc/pTuple/IncludeParticleName = "False"
 b:Sc/pTuple/IncludeKineticEnergy = "False"
-b:Sc/pTuple/IncludeVolumeName = "False"
+b:Sc/pTuple/IncludeVolumeName = "True"
 
 b:Sc/pTuple/IncludeVolumeCopyNumber = "True"
 b:Sc/pTuple/IncludeEventID = "True"
 b:Sc/pTuple/IncludeEnergyDeposited = "True"
 b:Sc/pTuple/IncludeStepNumber = "True"
 b:Sc/pTuple/IncludePhysicalProcessName  = "True"
+b:Sc/pTuple/IncludeGlobalTime = "True"
 
 # Visualization
 s:Gr/view/Type = "OpenGl"
@@ -69,7 +70,11 @@ d:Gr/view/Theta = 45 deg
 d:Gr/view/Phi = 45 deg
 b:Gr/view/IncludeStepPoints = "True"
 
+#d:Tf/TimelineStart = 0. s
+#d:Tf/TimelineEnd = 10. s
+#i:Tf/NumberOfSequentialTimes = 100
+
 Ts/NumberOfThreads = 1 
 b:Ts/ShowCPUTime = "True"
 i:Ts/Seed = 1 
-
+#b:Gr/view/CopyOpenGLToPDF = "True" # save to PDF

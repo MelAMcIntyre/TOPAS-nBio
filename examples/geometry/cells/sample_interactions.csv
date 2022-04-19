@@ -1,0 +1,25 @@
+   x (cm),     y (cm),      z (cm),         KE (MeV),  Edep (MeV),       ParticleID,   TrackID,       RunID,     EventID, VolName,	    ProcessName,                GlobalTime (ps)      
+   0.0013658   0.00635655   0.00122028      1.52315    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0479    
+   0.0013658   0.00635655   0.00121926      1.52304    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0485    
+   0.0013658   0.00635655   0.00121917      1.52302    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0485    
+   0.0013658   0.00635655   0.00121916      1.52299    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0485    
+   0.0013658   0.00635655   0.00121857      1.52295    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0489    
+   0.0013658   0.00635655   0.00121851      1.52293    1.377e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAExcitation      54.0489    
+   0.0013658   0.00635655    0.0012183      1.52287    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation       54.049    
+   0.0013658   0.00635655   0.00121778       1.5228    1.261e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAExcitation      54.0493    
+   0.0013658   0.00635655   0.00121756      1.52279    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0495    
+   0.0013658   0.00635655   0.00121739      1.52274    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0496    
+   0.0013658   0.00635655   0.00121708       1.5227    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0497    
+   0.0013658   0.00635655   0.00121708      1.52262    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0497    
+   0.0013658   0.00635655   0.00121614       1.5226    1.124e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAExcitation      54.0503    
+   0.0013658   0.00635655   0.00121566      1.52259     3.23e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0506    
+   0.0013658   0.00635655   0.00121476      1.52205    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0511    
+   0.0013658   0.00635655   0.00121435      1.52177    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0513    
+   0.0013658   0.00635656   0.00121285      1.52153    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0522    
+   0.0013658   0.00635656   0.00121277      1.52149    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0523    
+   0.0013658   0.00635656   0.00121269      1.52147    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0523    
+   0.0013658   0.00635656   0.00121266      1.52144    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0523    
+   0.0013658   0.00635656   0.00121225      1.52139    1.339e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0526    
+   0.0013658   0.00635656   0.00121169      1.52133    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0529    
+   0.0013658   0.00635656    0.0012116      1.52129    1.605e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation       54.053    
+   0.0013658   0.00635656   0.00121093      1.52127     3.23e-05         2212          399            0          186 MyCulture/Mitochondria proton_G4DNAIonisation      54.0533 

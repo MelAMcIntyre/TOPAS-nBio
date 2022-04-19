@@ -41,11 +41,11 @@ s:Sc/pTuple/Component = "target"
 s:Sc/pTuple/OutputType = "ASCII"
 b:Sc/pTuple/OutputToConsole = "True"
 s:Sc/pTuple/IfOutputFileAlreadyExists = "Overwrite"
-d:Sc/pTuple/TimeCut = 10.0 ns
+#d:Sc/pTuple/TimeCut = 10.0 ns
 
 # Alternatively, chemical or physical information can be 
 # disregarded setting to false the following parameters
-b:Sc/pTuple/IncludeChemicalTrack = "True"
+b:Sc/pTuple/IncludeChemicalTrack = "False"
 b:Sc/pTuple/IncludeParticleName = "True"
 # Additional information is available
 # Physical process. A "none" value is assigned to the chemistry tuple
@@ -70,16 +70,16 @@ b:Sc/pTuple/IncludeVolumeCopyNumber = "True"
 b:Sc/pTuple/IncludeVertexPosition = "True"
 
 # Visualization
-s:Gr/view/Type = "OpenGl"
-s:Gr/view/ColorBy = "ParticleType"
-i:Gr/view/WindowSizeX = 800
-i:Gr/view/WindowSizeY = 800 
-d:Gr/view/Theta = 45 deg
-d:Gr/view/Phi = 45 deg
-b:Gr/view/UseSmoothTrajectories = "False"
+#s:Gr/view/Type = "OpenGl"
+#s:Gr/view/ColorBy = "ParticleType"
+#i:Gr/view/WindowSizeX = 800
+#i:Gr/view/WindowSizeY = 800 
+#d:Gr/view/Theta = 45 deg
+#d:Gr/view/Phi = 45 deg
+#b:Gr/view/UseSmoothTrajectories = "False"
 # Color per chemical specie. Use full name of the molecules
-sv:Gr/view/ColorByParticleTypeNames = 8 "e-" "proton" "alpha" "Hydroxil" "SolvatedElectron" "HydrogenPeroxide" "Hydrogen" "DiHydrogen" 
-sv:Gr/view/ColorByParticleTypeColors = 8 "red" "green" "green" "magenta" "yellow" "blue" "green" "white" 
+#sv:Gr/view/ColorByParticleTypeNames = 8 "e-" "proton" "alpha" "Hydroxil" "SolvatedElectron" "HydrogenPeroxide" "Hydrogen" "DiHydrogen" 
+#sv:Gr/view/ColorByParticleTypeColors = 8 "red" "green" "green" "magenta" "yellow" "blue" "green" "white" 
 
 Ts/NumberOfThreads = 1 
 b:Ts/ShowCPUTime = "True"

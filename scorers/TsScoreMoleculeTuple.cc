@@ -125,7 +125,7 @@ fIncludeGlobalTime(false), fIncludeEnergyDeposited(false), fIncludeVertex(false)
 		fNtuple->RegisterColumnF(&fEnergyDeposited, "Energy deposited", "keV");
 	
 	if ( fIncludeKineticEnergy )
-		fNtuple->RegisterColumnF(&fKineticEnergy, "Kinetice energy", "keV");
+		fNtuple->RegisterColumnF(&fKineticEnergy, "Kinetic energy", "keV");
 	
 }
 
@@ -145,7 +145,7 @@ G4bool TsScoreMoleculeTuple::ProcessHits(G4Step* aStep,G4TouchableHistory*)
 	if ( fIncludeChemistry && aTrack->GetTrackID() < 0 ) {
 		fTime = aStep->GetPreStepPoint()->GetGlobalTime();
 		
-		if ( fTime >= fTimeCut ) {
+		//if ( fTime >= fTimeCut ) {
 			G4TouchableHistory* touchable = (G4TouchableHistory*)(aStep->GetPreStepPoint()->GetTouchable());
 			fVolumeName = touchable->GetVolume()->GetName();
 			fVolumeCopyNumber  = touchable->GetVolume()->GetCopyNo();
@@ -177,9 +177,9 @@ G4bool TsScoreMoleculeTuple::ProcessHits(G4Step* aStep,G4TouchableHistory*)
 			
 			fNtuple->Fill();
 			
-			aStep->GetTrack()->SetTrackStatus(fStopAndKill);
+			//aStep->GetTrack()->SetTrackStatus(fStopAndKill);
 			return true;
-		}
+			//}
 	} else if ( fIncludePhysics && aStep->GetTotalEnergyDeposit() > 0 ){
 		G4TouchableHistory* touchable = (G4TouchableHistory*)(aStep->GetPreStepPoint()->GetTouchable());
 		fVolumeName = touchable->GetVolume()->GetName();
@@ -205,7 +205,8 @@ G4bool TsScoreMoleculeTuple::ProcessHits(G4Step* aStep,G4TouchableHistory*)
 		fMoleculeID = aTrack->GetParticleDefinition()->GetPDGEncoding();
 		fParticleName = aTrack->GetParticleDefinition()->GetParticleName();
 		fProcessName = aStep->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName();
-		
+		fTime = aStep->GetPreStepPoint()->GetGlobalTime();
+		  
 		fNtuple->Fill();
 		
 		return true;

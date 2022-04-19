@@ -1,0 +1,89 @@
+####################################################################################################################################
+####################################################################################################################################
+############################################ TOPAS-nBio extended Cell Culture example###############################################
+####################### Volume should be square or rectangular and should be big enough to hold all cells.##########################
+####################################################################################################################################
+####################################################################################################################################
+########## Since cells are arranged randomly, this check should be switched off to allow the randomize algorithm to work.###########
+b:Ge/QuitIfOverlapDetected="false"
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# GEOMETRY
+#-----------------------------------------------------------------------------------------------------------------------------------
+d:Ge/World/HLX=1000. um
+d:Ge/World/HLY=1000. um
+d:Ge/World/HLZ=1000. um
+s:Ge/World/Material = "Air"
+
+s:Ge/RandomCells/Type="TsCellCulture"
+s:Ge/RandomCells/Material="G4_WATER"
+s:Ge/RandomCells/Parent="World"
+d:Ge/RandomCells/Container_HLX= 100 um
+d:Ge/RandomCells/Container_HLY= 100 um
+d:Ge/RandomCells/Container_HLZ= 25 um
+i:Ge/RandomCells/NumberOfCells = 45
+d:Ge/RandomCells/CellRadius=10 um
+d:Ge/RandomCells/NucleusRadius=8 um
+s:Ge/RandomCells/Nucleus/Material= "G4_WATER"
+
+#Mitochondria
+i:Ge/RandomCells/Mitochondria/NumberOfMitochondria= 0 #3 #9185965
+d:Ge/RandomCells/Mitochondria/Radius=0.5 um
+d:Ge/RandomCells/Mitochondria/Height= 0.5 um #6.8 nm
+s:Ge/RandomCells/Mitochondria/Material="G4_WATER"
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# PHYSICS
+#-----------------------------------------------------------------------------------------------------------------------------------
+#Ph/Default/Modules = 1 "g4em-livermore"
+Ph/Default/Modules = 1 "g4em-dna"
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# PARTICLE SOURCE
+#-----------------------------------------------------------------------------------------------------------------------------------
+s:So/ParticleSource/Type = "Beam" 
+s:So/ParticleSource/Component =  "BeamPosition" 
+s:So/ParticleSource/BeamParticle = "proton" #gamma
+d:So/ParticleSource/BeamEnergy = 1.75 MeV 
+u:So/ParticleSource/BeamEnergySpread = 0
+s:So/ParticleSource/BeamShape = "Rectangle"
+s:So/ParticleSource/BeamPositionDistribution = "Flat"
+s:So/ParticleSource/BeamAngularDistribution = "Gaussian"
+d:So/ParticleSource/BeamAngularCutoffX = 10 deg
+d:So/ParticleSource/BeamAngularCutoffY = 10 deg
+s:So/ParticleSource/BeamPositionCutoffShape = "Rectangle"
+d:So/ParticleSource/BeamPositionCutoffX = 100 um
+d:So/ParticleSource/BeamPositionCutoffY = 100 um
+d:So/ParticleSource/BeamAngularSpreadX = 0.01 deg
+d:So/ParticleSource/BeamAngularSpreadY = 0.01 deg
+i:So/ParticleSource/NumberOfHistoriesInRun = 200
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# VISUALISATION
+#-----------------------------------------------------------------------------------------------------------------------------------
+#s:Ge/RandomCells/Color="green"
+#s:Ge/RandomCells/Nucleus/color = "purple"
+#s:Ge/RandomCells/Cylinders/Color="yellow"
+#s:Ge/RandomCells/Cylinders/DrawingStyle="solid"
+
+#b:Gr/View/Enable = "False"
+#s:Gr/View/Type = "OpenGL"
+#i:Gr/View/WindowSizeX = 1024
+#i:Gr/View/WindowSizeY = 768
+#u:Gr/View/Zoom = 10.
+#d:Gr/View/Theta = 45 deg
+#d:Gr/View/Phi = 45 deg
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# TIME INFO
+#-----------------------------------------------------------------------------------------------------------------------------------
+#d:Tf/TimelineStart = 0. s
+#d:Tf/TimelineEnd = 10. s
+#i:Tf/NumberOfSequentialTimes = 100
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# MISC
+#-----------------------------------------------------------------------------------------------------------------------------------
+b:Ts/ShowCPUTime = "True"
+i:Ts/NumberOfThreads = 10
+Ts/PauseBeforeQuit = "False"
