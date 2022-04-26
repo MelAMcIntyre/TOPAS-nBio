@@ -19,16 +19,13 @@
 class TsNtupleForCulture : public TsVNtupleScorer
 {
 public:
-    TsNtupleForCulture(TsParameterManager* pM, TsMaterialManager* mM, TsGeometryManager* gM, TsScoringManager* scM, TsExtensionManager* eM,
-                G4String scorerName, G4String quantity, G4String outFileName, G4bool isSubScorer);
-    
+    TsNtupleForCulture(TsParameterManager *pM, TsMaterialManager *mM, TsGeometryManager *gM, TsScoringManager *scM, TsExtensionManager *eM,
+                       G4String scorerName, G4String quantity, G4String outFileName, G4bool isSubScorer);
+
     virtual ~TsNtupleForCulture();
 
-    G4bool ProcessHits(G4Step*,G4TouchableHistory*);
-    
-    
+    G4bool ProcessHits(G4Step *, G4TouchableHistory *);
 
-    
 protected:
     // Output variables
     G4float fPosX;
@@ -36,12 +33,15 @@ protected:
     G4float fPosZ;
     G4float fEnergy;
     G4float fEnergyDep;
+    G4int fcopyNo;
+    G4int fmotherCopyNo;
     G4int fParticleType;
     G4int fProcess;
     G4int fTrackID;
     G4int fRunID;
     G4int fEventID;
     G4String fVolName;
-
+    G4String fProcessName;
+    G4double fGTime;
 };
 #endif
