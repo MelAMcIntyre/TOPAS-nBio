@@ -27,27 +27,29 @@ TsNtupleForCulture::TsNtupleForCulture(TsParameterManager *pM, TsMaterialManager
 {
 
     // SetScorer();
-    fNtuple->RegisterColumnF(&fPosX, "Position X", "cm");
-    fNtuple->RegisterColumnF(&fPosY, "Position Y", "cm");
-    fNtuple->RegisterColumnF(&fPosZ, "Position Z", "cm");
-    fNtuple->RegisterColumnF(&fEnergy, "Energy", "MeV");
-    fNtuple->RegisterColumnF(&fEnergyDep, "Energy Deposited", "MeV");
-    fNtuple->RegisterColumnI(&fParticleType, "Particle Type (in PDG Format)");
-    fNtuple->RegisterColumnI(&fTrackID, "Track ID");
-    fNtuple->RegisterColumnI(&fRunID, "Run ID");
-    fNtuple->RegisterColumnI(&fEventID, "Event ID");
-    fNtuple->RegisterColumnD(&fGTime, "Global Time", "ps");
-    fNtuple->RegisterColumnS(&fVolName, "Volume Name");
-    fNtuple->RegisterColumnS(&fProcessName, "Process Name");
+    //fNtuple->RegisterColumnF(&fPosX, "Position X", "cm");
+    //fNtuple->RegisterColumnF(&fPosY, "Position Y", "cm");
+    //fNtuple->RegisterColumnF(&fPosZ, "Position Z", "cm");
+  //fNtuple->RegisterColumnF(&fEnergy, "Energy", "MeV");
+  //fNtuple->RegisterColumnF(&fEnergyDep, "Energy Deposited", "MeV");
+  //fNtuple->RegisterColumnI(&fParticleType, "Particle Type (in PDG Format)");
+  //fNtuple->RegisterColumnI(&fTrackID, "Track ID");
+  //fNtuple->RegisterColumnI(&fRunID, "Run ID");
+  //fNtuple->RegisterColumnI(&fEventID, "Event ID");
+  //fNtuple->RegisterColumnD(&fGTime, "Global Time", "ps");
+  //fNtuple->RegisterColumnS(&fVolName, "Volume Name");
+  //fNtuple->RegisterColumnS(&fProcessName, "Process Name");
 
+    G4String outputName = fPm->GetStringParameter(GetFullParmName("OutputFilename"));
     std::ofstream rmfile;
-    rmfile.open("output.csv");
-    std::remove("output.csv");
+    rmfile.open(outputName);
+    std::remove(outputName);
     rmfile.close();
 
+    G4String edepName = fPm->GetStringParameter(GetFullParmName("EdepFilename"));
     std::ofstream rmeDepfile;
-    rmeDepfile.open("energyDep.csv");
-    std::remove("energyDep.csv");
+    rmeDepfile.open(edepName);
+    std::remove(edepName);
     rmeDepfile.close();
 }
 
@@ -76,10 +78,12 @@ G4bool TsNtupleForCulture::ProcessHits(G4Step *aStep, G4TouchableHistory *)
     G4String nucString = "Nucleus";
 
     // Open output files
+    G4String outputName = fPm->GetStringParameter(GetFullParmName("OutputFilename"));
+    G4String edepName = fPm->GetStringParameter(GetFullParmName("EdepFilename"));
     std::ofstream outfile;
-    outfile.open("output.csv", std::ofstream::app);
+    outfile.open(outputName, std::ofstream::app);
     std::ofstream eDepOutfile;
-    eDepOutfile.open("energyDep.csv", std::ofstream::app);
+    eDepOutfile.open(edepName, std::ofstream::app);
 
     if ((flagEnergyDep >= 1.079e-5) && volumeName.contains(cylString))
     {
@@ -163,7 +167,7 @@ G4bool TsNtupleForCulture::ProcessHits(G4Step *aStep, G4TouchableHistory *)
             flagProcess = 63;
 
         outfile << fEventID << "," << fTrackID << "," << fmotherCopyNo << "," << fcopyNo << "," << fPosX << "," << fPosY << "," << fPosZ << "," << std::fixed << std::setprecision(16) << fGTime << "," << std::fixed << std::setprecision(1) << fParticleType << "," << flagProcess << "," << std::fixed << std::setprecision(6) << fEnergy << "," << fEnergyDep << "\n";
-        fNtuple->Fill();
+        //fNtuple->Fill();
         return true;
     }
 

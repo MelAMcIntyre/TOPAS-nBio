@@ -93,10 +93,11 @@ G4VPhysicalVolume *TsCellCulture::Construct()
     G4Orb *gNucleus = new G4Orb("gNucleus", NuclRadius);
     G4LogicalVolume *lNucleus = CreateLogicalVolume(subComponentName1, gNucleus);
 
-    std::ofstream cellfile("cell_positions.csv");
-    std::ofstream dnafile("dna_positions.csv");
-
     G4bool placeCylinders = fPm->GetBooleanParameter(GetFullParmName("Cylinders/DoRandomPlacement"));
+    G4String cellPosName = fPm->GetStringParameter(GetFullParmName("CellPositionFilename"));
+    std::ofstream cellfile(cellPosName);
+
+    std::ofstream dnafile("dna_positions.csv");
 
     // Randomly place cells in the volume
     for (int j = 0; j < NbOfCells; j++)
@@ -147,8 +148,8 @@ G4VPhysicalVolume *TsCellCulture::Construct()
                     const G4int NbOfCyl = fPm->GetIntegerParameter(GetFullParmName("Cylinders/NumberOfCylinders"));
 
                     // Radius and Height of cylinder/DNA segment (default values if none are specified)
-                    G4double radius = 1.15 * nanometer;
-                    G4double height = 6.8 * nanometer;
+		    G4double radius;
+		    G4double height;
 
                     // Read if they are specified
                     name = GetFullParmName("Cylinders/Radius");
